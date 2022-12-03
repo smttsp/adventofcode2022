@@ -1,8 +1,8 @@
 """day3
 """
 
-file1 = open('./data/day3.txt', 'r')
-lines = [line.strip() for line in file1.readlines()]
+from utils import read_file
+lines = read_file('./data/day3.txt')
 
 lower_ord = ord("a") - 1
 upper_ord = ord("A") - 1
@@ -38,6 +38,7 @@ def get_part2(lines):
         for letter in intersections:
             val += get_val(letter)
     return val
+
 
 print(get_part1(lines))
 print(get_part2(lines))

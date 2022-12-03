@@ -1,7 +1,7 @@
 """Day 2: Rock Paper Scissors
 """
-file1 = open('./data/day2.txt', 'r')
-lines = [line.strip() for line in file1.readlines()]
+from utils import read_file
+lines = read_file('./data/day2.txt')
 
 lose, draw, win = 0, 3, 6
 winning_point_dict = {("A", "Y"): win, ("B", "Z"): win, ("C", "X"): win, ("A", "X"): draw, ("B", "Y"): draw, ("C", "Z"): draw}
