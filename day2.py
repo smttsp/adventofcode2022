@@ -1,12 +1,21 @@
 """Day 2: Rock Paper Scissors
 """
 from utils import read_file
-lines = read_file('./data/day2.txt')
+
+lines = read_file("./data/day2.txt")
 
 lose, draw, win = 0, 3, 6
-winning_point_dict = {("A", "Y"): win, ("B", "Z"): win, ("C", "X"): win, ("A", "X"): draw, ("B", "Y"): draw, ("C", "Z"): draw}
+winning_point_dict = {
+    ("A", "Y"): win,
+    ("B", "Z"): win,
+    ("C", "X"): win,
+    ("A", "X"): draw,
+    ("B", "Y"): draw,
+    ("C", "Z"): draw,
+}
 selection_point_dict = {"X": 1, "Y": 2, "Z": 3, "A": 1, "B": 2, "C": 3}
 winning_point_dict_part2 = {"X": lose, "Y": draw, "Z": win}
+
 
 def get_part1():
 
@@ -14,20 +23,23 @@ def get_part1():
     for line in lines:
         opponent, response = line.strip().split(" ")
         selection_point = selection_point_dict[response]
-        won_point = draw if opponent == response else winning_point_dict.get((opponent, response), lose)
+        won_point = (
+            draw
+            if opponent == response
+            else winning_point_dict.get((opponent, response), lose)
+        )
         cur_game = selection_point + won_point
         total_point += cur_game
     return total_point
 
 
 def get_part2():
-    file1 = open('./data/day2.txt', 'r')
+    file1 = open("./data/day2.txt", "r")
     lines = file1.readlines()
 
     total_point = 0
     for line in lines:
         opponent, response = line.strip().split(" ")
-        selection_point = selection_point_dict[response]
         if response == "X":
             cur_pt = {"A": 3, "B": 1, "C": 2}[opponent]
         elif response == "Y":

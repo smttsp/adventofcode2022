@@ -1,7 +1,8 @@
 """day1
 """
 from utils import read_file
-lines = read_file('./data/day1.txt')
+
+lines = read_file("./data/day1.txt")
 
 
 def get_all_deers():

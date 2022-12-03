@@ -2,7 +2,8 @@
 """
 
 from utils import read_file
-lines = read_file('./data/day3.txt')
+
+lines = read_file("./data/day3.txt")
 
 lower_ord = ord("a") - 1
 upper_ord = ord("A") - 1
@@ -11,7 +12,7 @@ upper_ord = ord("A") - 1
 def get_val(letter):
     cur_val = 0
     if letter.islower():
-        cur_val += (ord(letter) - lower_ord)
+        cur_val += ord(letter) - lower_ord
     else:
         cur_val += (ord(letter) - upper_ord) + 26
     return cur_val
