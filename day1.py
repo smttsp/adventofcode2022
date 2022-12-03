@@ -1,13 +1,13 @@
+file1 = open('./data/day1.txt', 'r')
+lines = [line.strip() for line in file1.readlines()]
+
 
 def get_all_deers():
-    file1 = open('./data/day1.txt', 'r')
-    lines = file1.readlines()
-
     max_deer = 0
     cur_deer = 0
     all_deers = []
+    
     for line in lines:
-
         if line.strip():
             cur_deer += int(line.strip())
         else:
@@ -15,6 +15,7 @@ def get_all_deers():
             max_deer = max(max_deer, cur_deer)
             cur_deer = 0
     return all_deers
+
 
 all_deers = get_all_deers()
 top_deers = sorted(all_deers, reverse=True)
