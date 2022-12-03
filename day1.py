@@ -1,3 +1,6 @@
+"""day1
+"""
+
 file1 = open('./data/day1.txt', 'r')
 lines = [line.strip() for line in file1.readlines()]
 
@@ -6,7 +9,7 @@ def get_all_deers():
     max_deer = 0
     cur_deer = 0
     all_deers = []
-    
+
     for line in lines:
         if line.strip():
             cur_deer += int(line.strip())
